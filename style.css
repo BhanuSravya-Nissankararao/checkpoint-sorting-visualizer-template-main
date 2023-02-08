@@ -31,3 +31,8 @@ body {
     padding: 10px;
     justify-content: space-around;
 }
+.Sort{
+    border-color: blue;
+    color : blue;
+    font-size: large;
+}
