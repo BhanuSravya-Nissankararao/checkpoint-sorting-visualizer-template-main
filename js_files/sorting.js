@@ -58,8 +58,12 @@ function waitforme(milisec) {
  */
 // Selecting size slider from DOM
 let arraySize = document.querySelector('#arr_sz');
+// var no_of_bar=arr_size.value;
 // add Event listener to update the bars on the UI
-
+arraySize.addEventListener('input', function(){
+    console.log(arraySize.value, typeof(arraySize.value));
+    createNewArray(parseInt(arraySize.value));
+});
 
 // Default input for waitforme function (260ms)
 let delay = 260;
@@ -83,7 +87,7 @@ createNewArray();
 /**
  * Complete this method to create Bars of random heights
  */
-function createNewArray(noOfBars = 60) {
+function createNewArray(noOfBars = 100) {
     // calling helper function to delete old bars from dom
     deleteChild();
 
@@ -100,6 +104,7 @@ function createNewArray(noOfBars = 60) {
     for (let i = 0; i < noOfBars; i++) {
         const bar=document.createElement("div");
         bar.style.height=`${array[i]*2}px`;
+        bar.style.width=`6px`
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
